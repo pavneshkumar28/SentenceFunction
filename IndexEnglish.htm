@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="Sentence.css" />
+  </head>
+
+  <body>
+
+    <div class="container">
+      <form action="#" onsubmit="myFunction()">
+        <input type="text" id="string" value="Hello World!" required>
+        <input tyoe="text" id="letter" value="r" required>
+        <input type="submit" value="Submit" id="button">
+      </form>
+    </div>
+
+
+    <script>
+      function myFunction() {
+
+        var str = document.getElementById("string").value;
+        console.log("The sentence you entered: ", str);
+
+        const sentence = document.createElement("p");
+        sentence.innerText = "The sentence you entered: " + str;
+        document.body.appendChild(sentence);
+
+
+
+
+        var letter = document.getElementById("letter").value;
+        console.log("The letter you entered: ", letter);
+
+
+        const alphabet = document.createElement("p");
+        alphabet.innerText = "The letter you entered: " + letter;
+        document.body.appendChild(alphabet);
+
+        function hr() {
+          const line = document.createElement("hr");
+          line.innerHTML = "-----------------";
+          document.body.appendChild(line);
+        }
+
+
+
+
+        //var letterCheck = str.includes(letter)
+        //var letterCeck = str.indexOf(letter) !== -1
+        if (str.indexOf(letter) == -1) {
+          alert("Letter does not exist in the sentence")
+          const Letternotavailable = document.createElement("p");
+          Letternotavailable.innerText = "Result:Letter does not exist in the sentence";
+          document.body.appendChild(Letternotavailable);
+          hr();
+
+        }
+        else {
+          var afterLetter = str.substring(str.indexOf(letter) + 1);
+          console.log("Result:", afterLetter)
+
+          const Result = document.createElement("p");
+          Result.innerText = "Result: " + afterLetter;
+          document.body.appendChild(Result);
+          hr();
+
+        }
+      }
+    </script>
+
+  </body>
+
+</html>
